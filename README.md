@@ -2,7 +2,7 @@
 
 ## Table of Contents
 * [About](#about)
-* [API used](#apis-used)
+* [APIs used](#apis-used)
 * [Get Started](#get-started)
 
 ## About
