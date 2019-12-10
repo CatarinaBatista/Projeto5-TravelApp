@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Travel App</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Hello</h1>
+        </header>
+
+        <main>
+            
+        </main>
+
+        <footer>
+            <p>&copy Catarina Batista 2019</p>
+        </footer>
+
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+
+    </body>
+</html>
