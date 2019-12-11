@@ -10,9 +10,10 @@ module.exports = {
     devtool: 'source-map',
     stats: 'verbose',
     /* devServer: {
-        port: 8080,
+        port: 8000,
     }, */
-    output: {
+    output: {        
+        path: path.resolve(__dirname, 'dist'),
         libraryTarget: 'var',
         library: 'Client'
     },
@@ -30,6 +31,10 @@ module.exports = {
             {
               test: /\.(jpe?g|png|gif|svg)$/,
               use: [ 'file-loader' ],
+            },
+            {
+              test: /\.(html)$/,
+              use: [{ loader: 'html-loader' }]
             }
         ]
     },
@@ -41,7 +46,7 @@ module.exports = {
         new CleanWebpackPlugin({
             dry: true,
             verbose: true,
-            cleanStaleWebpackAssets: true,
+            cleanStaleWebpackAssets: false,
             protectWebpackAssets: false
         }),
         new WorkboxPlugin.GenerateSW()

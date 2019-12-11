@@ -11,7 +11,6 @@ module.exports = {
     entry: './src/client/index.js',
     mode: 'production',
     output: {
-        path: path.resolve(__dirname, 'dist'),
         libraryTarget: 'var',
         library: 'Client'
     },
@@ -33,6 +32,10 @@ module.exports = {
               test: /\.(jpe?g|png|gif|svg)$/,
               use: [ 'file-loader' ],
             },
+            {
+              test: /\.(html)$/,
+              use: [{ loader: 'html-loader' }]
+            }
         ]
     },
     plugins: [
@@ -40,15 +43,14 @@ module.exports = {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
-        new MiniCssExtractPlugin({filename: '[name].css'}),
-        new WorkboxPlugin.GenerateSW({
-            clientsClaim: true,
-            skipWaiting: true
-        }),        
+        new MiniCssExtractPlugin({
+            filename: '[name].css'
+        }),
+        new WorkboxPlugin.GenerateSW(),        
         new CleanWebpackPlugin({
             dry: true,
             verbose: true,
-            cleanStaleWebpackAssets: true,
+            cleanStaleWebpackAssets: false,
             protectWebpackAssets: false
         })
     ]
