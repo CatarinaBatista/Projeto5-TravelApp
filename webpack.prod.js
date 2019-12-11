@@ -6,6 +6,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/client/index.js',
@@ -31,10 +32,6 @@ module.exports = {
             {
               test: /\.(jpe?g|png|gif|svg)$/,
               use: [ 'file-loader' ],
-            },
-            {
-              test: /\.(html)$/,
-              use: [{ loader: 'html-loader' }]
             }
         ]
     },
@@ -52,6 +49,10 @@ module.exports = {
             verbose: true,
             cleanStaleWebpackAssets: false,
             protectWebpackAssets: false
-        })
+        }),
+        new CopyWebpackPlugin([
+            {from:'./src/client/media/images',to:'media/images'} 
+        ]),
+
     ]
 }
