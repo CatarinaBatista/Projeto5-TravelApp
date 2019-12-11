@@ -1,6 +1,7 @@
 @import "variables.scss";
 
 footer {
+    grid-area: 4/1/5/2;
     background-color: $background-footer;
     color: $font-color-footer;
     bottom: 0;
