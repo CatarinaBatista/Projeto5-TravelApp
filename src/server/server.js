@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 })
 
 
-app.post('/test', function (req, res) {
+app.post('/addTrip', function (req, res) {
     console.log(req);
 })
 
