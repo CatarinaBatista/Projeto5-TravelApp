@@ -1,0 +1,11 @@
+@import "variables.scss";
+
+.navbar {
+    background-color: $background-header;
+
+    a {
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+    }
+}
