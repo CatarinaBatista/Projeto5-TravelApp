@@ -12,8 +12,7 @@ module.exports = {
     /* devServer: {
         port: 8000,
     }, */
-    output: {        
-        path: path.resolve(__dirname, 'dist'),
+    output: {
         libraryTarget: 'var',
         library: 'Client'
     },
@@ -48,7 +47,6 @@ module.exports = {
             verbose: true,
             cleanStaleWebpackAssets: false,
             protectWebpackAssets: false
-        }),
-        new WorkboxPlugin.GenerateSW()
+        })
     ]
 }
