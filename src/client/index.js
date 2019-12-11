@@ -1,7 +1,9 @@
 //import functions
 
 //import scss
-import './styles/style.scss';
+import './styles/header.scss';
+import './styles/footer.scss';
+import './media/images/logo.png';
 
 
 console.log("CHANGE!!");
