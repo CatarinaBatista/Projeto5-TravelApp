@@ -1,0 +1,45 @@
+#about{
+    
+    .intro {
+        height: 430px;
+        font-size: 18px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 100px;
+
+        h1 {
+            margin-top: 0;
+        }
+    }
+    
+    .image-header {
+        top: 80px;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.15;
+        height: 27rem;
+        width: 100%;
+        background: url('/src/client/media/images/intro.jpg') no-repeat center center/cover; 
+    }
+}
+
+#plan {
+    /* background-color: #00a9d36e; */
+    height: 500px;
+    position: relative;
+    
+    .form {
+        align-content: center;
+        height: 300px;
+        width: 80%;
+        background-color: #00a9d36e;
+        position:absolute;
+        left:50%;
+        top:50%;        
+        transform: translate(-50%,-50%);
+        border-radius: 30px;
+    }
+}
