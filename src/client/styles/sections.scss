@@ -12,6 +12,13 @@
 
         h1 {
             margin-top: 0;
+            background-color: white;
+            display: inline-block;
+        }
+
+        p {
+            background-color: white;
+            display: inline-block;
         }
     }
     
@@ -19,7 +26,7 @@
         top: 80px;
         position: absolute;
         z-index: -1;
-        opacity: 0.15;
+        opacity: 0.8;
         height: 27rem;
         width: 100%;
         background: url('/src/client/media/images/intro.jpg') no-repeat center center/cover; 
@@ -28,18 +35,25 @@
 
 #plan {
     /* background-color: #00a9d36e; */
-    height: 500px;
+    height: 580px;
     position: relative;
+    background-color: #ecf9ff;
     
     .form {
         align-content: center;
-        height: 300px;
+        height: 380px;
         width: 80%;
-        background-color: #00a9d36e;
-        position:absolute;
-        left:50%;
-        top:50%;        
+        background-color: white/* #00a9d36e */;
+        position: absolute;
+        left: 50%;
+        top: 50%;        
         transform: translate(-50%,-50%);
-        border-radius: 30px;
+        border-radius: 40px;
+        box-shadow: 0px 0px 20px #cececec4;
     }
+}
+
+#results {
+    /* height: 550px; */
+    background-color: #ecffed;
 }
