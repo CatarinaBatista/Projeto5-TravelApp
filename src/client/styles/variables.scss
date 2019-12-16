@@ -1,3 +1,11 @@
+//general
+$font-family: 'Gochi Hand', cursive;  /* 'American Typewriter', serif */
+
+//footer & navbar
 $background-footer: black;
 $font-color-footer: white;
 $background-header: white;
+
+//sections
+$background-image-about: url('/src/client/media/images/intro.jpg') no-repeat center center/cover; 
+$box-shadow: 0px 0px 20px #b0d9ff7c;
