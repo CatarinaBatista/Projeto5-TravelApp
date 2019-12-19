@@ -1,0 +1,24 @@
+#section-modal {
+    width: 1000px;
+
+    .modal-body {
+        display: grid;
+        grid-template-columns: 300px auto;
+        grid-template-areas: "img info";
+    }
+    
+    #cityImg {
+        grid-area: "img";
+        height: auto;
+        width: 250px;
+        margin: 0 20px;
+        border-radius: 30px;
+    }
+
+    .tripInfo {
+        grid-area: "info";
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}

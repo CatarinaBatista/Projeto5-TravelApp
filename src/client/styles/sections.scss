@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-#about{
+#section-about{
     
     .intro {
         height: 430px;
@@ -35,7 +35,7 @@
     }
 }
 
-#plan {
+#section-plan {
     /* background-color: #00a9d36e; */
     height: 580px;
     position: relative;
@@ -55,7 +55,7 @@
     }
 }
 
-#results {
+#section-results {
     /* height: 550px; */
     background-color: #ecffed;
 }
