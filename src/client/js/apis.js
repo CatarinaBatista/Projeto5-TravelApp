@@ -6,10 +6,10 @@ const pixabayURL = 'https://pixabay.com/api/?key=';
 
 //Global Variables
 const destination = document.getElementById('destination');
-let latitude = null;
+/* let latitude = null;
 let longitude = null;
 let returnDate = document.getElementById('return-date');
-let departDate = document.getElementById('depart-date');
+let departDate = document.getElementById('depart-date'); */
 
 
 /* Function to GET City data from GeoName API */
@@ -56,16 +56,15 @@ const getWeather = async(latitude, longitude) => {
     }
 }
 
-const getImages = async() => {
-    const url = `${pixabayURL}${process.env.PIXABAY_API_KEY}`;
+const getImages = async(cityName) => {
+    const url = `${pixabayURL}${process.env.PIXABAY_API_KEY}&q=${cityName}&image_type=photo&category=places&pretty=true`;
 
     const result = await fetch(url);
     try {
         const data = await result.json();
-
-
+        
         console.log(data)
-        return data;
+        return data.hits[0].largeImageURL;
     }
     catch(error) {
         console.log("error", error);
