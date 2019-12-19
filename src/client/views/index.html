@@ -2,41 +2,104 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <title>Travel App</title>
     </head>
 
     <body>
+        <!-- Navbar -->
         <header>
             <nav class="navbar">
                 <a href="/">
                     <img src="../media/images/logo.png" alt="logo">
-                    <h2>Travel App</h2>
+                    <h4>Travel App</h4>
                 </a>
 
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#plan">Plan Your Travel</a></li>
+                    <li><a href="#about">About |</a></li>
+                    <li><a href="#plan">Plan Your Travel |</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <section id="about">
+            <!-- About section -->
+            <section id="section-about">
                 <div class="image-header"></div>
                 <div class="intro">
-                    <h1>Travel Planner</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut lectus arcu bibendum at varius vel. <br><br>
-                    Nulla porttitor massa id neque aliquam vestibulum. Nulla 
-                    pellentesque dignissim enim sit amet venenatis urna cursus. Habitasse platea dictumst quisque sagittis purus sit amet volutpat.</p>
+                    <div><h1>Travel App</h1></div>
+                    <br>
+                    <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut lectus arcu bibendum at varius vel. Nulla porttitor massa id neque aliquam vestibulum. </p></div>
+                </div>
+            </section>
+            
+            <!-- Form to plan trip -->
+            <section id="section-plan">
+                <div class="form">
+                    <form id="form">                        
+                        <img src="../media/images/logo.png" alt="logo">
+
+                        <h2>Planning Your Trip</h2>
+
+                        <div class="inputs">
+                            <input type="text" id="from" class="form-control leaving" name="from" placeholder="Leaving from...">
+                            <input type="text" id="destination" class="form-control going" name="to" placeholder="Going to..." required>
+
+                            <label>Departing on...
+                                <input id="depart-date" type="date" class="form-control" name="departing" required>
+                            </label>
+                            <label>Returning on...
+                                <input id="return-date" type="date" class="form-control" name="returning" required>
+                            </label>
+                            
+                            <button type="button" id="submitForm" class="btn btn-primary" value="Submit">
+                                Submit
+                            </button>
+                        </div>                        
+                    </form>
                 </div>
             </section>
 
-            <section id="plan">
-                <div class="form">
+            <!-- Modal -->
+            <section id="section-modal">
+                <div class="modal fade" id="modal" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalTitle"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
 
+                            <div class="modal-body">
+                                <img src="" id="cityImg" alt=""/>
+                                <div class="tripInfo">
+                                    <div><b>Departing on: </b><span id="departDate"></span><br></div>
+                                    <div><b>Returning on: </b><span id="returnDate"></span></div>
+                                    <div><b>Duration: </b><span id="durationTrip"></span></div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary">Add Trip</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </section>
+
+            <!-- All trips -->
+            <section id="section-results">
+
             </section>
         </main>
 
