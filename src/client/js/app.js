@@ -16,12 +16,15 @@ const showCityData = async(event) => {
     }
 }
 
+
 /* Fill Modal with Trip Info*/
 const fillModalInfo = async(city) => {
     const title = document.getElementById('modalTitle');
     const startDate = document.getElementById('depart-date').value.toString();
     const endDate = document.getElementById('return-date').value;
     const from = document.getElementById('from').value;
+    const carousel = document.querySelectorAll('.img-carousel');
+    let images = await getImages(city.cityName);
 
 
     if (from === '') {
@@ -35,9 +38,47 @@ const fillModalInfo = async(city) => {
     document.getElementById('returnDate').innerText = moment(endDate).format("dddd, DD MMMM YYYY").toString();
     document.getElementById('durationTrip').innerText = moment(endDate).diff(moment(startDate), 'days') + ' days';
 
-    document.getElementById('cityImg').setAttribute('src', await getImages(city.cityName));
-    document.getElementById('cityImg').setAttribute('alt', city.cityName);
+
+    for (let index = 0; index < carousel.length; index++) {
+        const img = carousel[index];
+        const url = images[index];
+        
+        img.src = url.image;
+        img.alt = url.cityName
+    }
 }
 
-/* Event Listener */
+/* Add trip */
+const addTrip = async (event) => {
+    event.preventDefault();
+
+    try {
+        const response = await fetch('http://localhost:8000/addTrip', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ trip: trip })
+        });
+
+        if (response.ok) {
+            const tripData = await response.json();
+            showTrip();
+            return tripData;
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const showTrip = async () => {
+
+    
+}
+
+
+/* --- Event Listeners --- */
+
+/* Show modal with city info after submit form*/
 document.getElementById('submitForm').addEventListener('click', (event) => showCityData(event));
+
+/* Add trip after save it*/
+document.getElementById('addTrip').addEventListener('click', (event) => addTrip(event));
