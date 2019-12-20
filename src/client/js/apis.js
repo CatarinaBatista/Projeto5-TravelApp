@@ -62,9 +62,25 @@ const getImages = async(cityName) => {
     const result = await fetch(url);
     try {
         const data = await result.json();
-        
-        console.log(data)
-        return data.hits[0].largeImageURL;
+
+        const images = [
+            {
+                image: data.hits[0].largeImageURL
+            },
+            {
+                image: data.hits[1].largeImageURL
+            },
+            {
+                image: data.hits[2].largeImageURL
+            },
+            {
+                image: data.hits[3].largeImageURL
+            },
+            {
+                image: data.hits[4].largeImageURL
+            }
+        ]
+        return images;
     }
     catch(error) {
         console.log("error", error);
