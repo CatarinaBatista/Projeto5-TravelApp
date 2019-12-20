@@ -55,7 +55,10 @@
     }
 }
 
-#section-results {
-    /* height: 550px; */
+#section-trips {
     background-color: #ecffed;
+
+    .hidden {
+        display: none
+    }
 }
