@@ -79,8 +79,36 @@
                                 </button>
                             </div>
 
-                            <div class="modal-body">
-                                <img src="" id="cityImg" alt=""/>
+                            <div class="modal-body">                                
+                                <div id="cityImg" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner" id="carousel">
+                                        <div class="carousel-item active">
+                                            <img class="img-carousel" src="" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="img-carousel" src="" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="img-carousel" src="" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="img-carousel" src="" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="img-carousel" src="" alt="">
+                                        </div>
+                                    </div>
+                                    
+                                    <a class="carousel-control-prev" href="#cityImg" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#cityImg" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+
                                 <div class="tripInfo">
                                     <div><b>Departing on: </b><span id="departDate"></span><br></div>
                                     <div><b>Returning on: </b><span id="returnDate"></span></div>
@@ -90,7 +118,7 @@
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-primary">Add Trip</button>
+                                <button type="button" class="btn btn-primary" id="addTrip">Add Trip</button>
                             </div>
                         </div>
                     </div>
