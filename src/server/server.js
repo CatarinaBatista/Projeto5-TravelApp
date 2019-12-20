@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
 
+//Variables
+const allTrips = {};
 
 // Start up an instance of app
 const app = express()
@@ -28,9 +30,20 @@ app.get('/', function (req, res) {
 })
 
 
-app.post('/addTrip', function (req, res) {
-    console.log(req);
-})
+app.post('/addTrip', addTrip);
+
+function addTrip(req, res) {
+    allTrips = {
+        /* city: ,
+        country: ,
+        latitude: ,
+        longitude: ,
+        startDate: ,
+        endDate: ,
+        images: ,
+        forecast:  */
+    }
+}
 
 
 // Setup Server
