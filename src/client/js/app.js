@@ -1,6 +1,8 @@
 import { getCityData, getImages} from './apis';
 import moment from 'moment';
 
+let trip = {};
+
 /* Show a modal with data of the city*/
 const showCityData = async(event) => {
     const form = document.getElementById('form');
@@ -17,7 +19,7 @@ const showCityData = async(event) => {
 }
 
 
-/* Fill Modal with Trip Info*/
+/* Fill Modal with Trip Info */
 const fillModalInfo = async(city) => {
     const title = document.getElementById('modalTitle');
     const startDate = document.getElementById('depart-date').value.toString();
@@ -39,6 +41,7 @@ const fillModalInfo = async(city) => {
     document.getElementById('durationTrip').innerText = moment(endDate).diff(moment(startDate), 'days') + ' days';
 
 
+    // Carousel
     for (let index = 0; index < carousel.length; index++) {
         const img = carousel[index];
         const url = images[index];
@@ -46,32 +49,52 @@ const fillModalInfo = async(city) => {
         img.src = url.image;
         img.alt = url.cityName
     }
+
+    // Trip
+    trip = {        
+        city: city.cityName,
+        country: city.country,
+        latitude: city.latitude,
+        longitude: city.longitude,
+        startDate: startDate,
+        endDate: endDate,
+        images: images,
+    }
 }
 
 /* Add trip */
 const addTrip = async (event) => {
     event.preventDefault();
+    
+    console.log(trip)
+    const response = await fetch('http://localhost:8000/addTrip', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ trip: trip })
+    });
 
     try {
-        const response = await fetch('http://localhost:8000/addTrip', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ trip: trip })
-        });
+        const tripData = await response.json();
+        
+        /* showTrip(tripData); */
+console.log(tripData)
+        return tripData;
 
-        if (response.ok) {
-            const tripData = await response.json();
-            showTrip();
-            return tripData;
-        }
     } catch (error) {
         console.log(error);
+        alert(error)
     }
+    
+    $('#modal').modal('hide');
+
 }
 
-const showTrip = async () => {
-
+const showTrip = async (tripData) => {
+    const all = document.getElementById("allTrips");
+    document.getElementById("section-trips").classList.remove("hidden")
     
+    console.log(tripData)
+    /* all.innerHTML = "<card" */
 }
 
 
