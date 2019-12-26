@@ -1,15 +1,9 @@
 /* Global Variables */
-// APIs
 const geoNamesUrl = 'http://api.geonames.org/searchJSON?q=';
 const darkSkyUrl = 'https://api.darksky.net/forecast/';
 const pixabayURL = 'https://pixabay.com/api/?key=';
 
-//Global Variables
 const destination = document.getElementById('destination');
-/* let latitude = null;
-let longitude = null;
-let returnDate = document.getElementById('return-date');
-let departDate = document.getElementById('depart-date'); */
 
 
 /* Function to GET City data from GeoName API */
