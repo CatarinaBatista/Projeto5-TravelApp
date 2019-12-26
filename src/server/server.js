@@ -8,7 +8,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 //Variables
-const allTrips = {};
+let allTrips = [];
 
 // Start up an instance of app
 const app = express()
@@ -33,16 +33,20 @@ app.get('/', function (req, res) {
 app.post('/addTrip', addTrip);
 
 function addTrip(req, res) {
-    allTrips = {
-        /* city: ,
-        country: ,
-        latitude: ,
-        longitude: ,
-        startDate: ,
-        endDate: ,
-        images: ,
-        forecast:  */
-    }
+    
+    allTrips.push({
+        city: req.body.trip.city,
+        country: req.body.trip.country,
+        latitude: req.body.trip.latitude,
+        longitude: req.body.trip.longitude,
+        startDate: req.body.trip.startDate,
+        startDate: req.body.trip.startDate,
+        images: req.body.trip.images,
+        //forecast: 
+    })
+
+    console.log(allTrips)
+    res.send(allTrips);
 }
 
 
