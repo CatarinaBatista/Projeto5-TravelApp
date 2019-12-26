@@ -76,8 +76,8 @@ const addTrip = async (event) => {
     try {
         const tripData = await response.json();
         
-        /* showTrip(tripData); */
-console.log(tripData)
+        showTrip(tripData);
+        console.log(tripData)
         return tripData;
 
     } catch (error) {
@@ -91,10 +91,37 @@ console.log(tripData)
 
 const showTrip = async (tripData) => {
     const all = document.getElementById("allTrips");
-    document.getElementById("section-trips").classList.remove("hidden")
+    document.getElementById("section-trips").classList.remove("hidden");
+
+    console.log(document.getElementById("section-trips").classList)
     
-    console.log(tripData)
-    /* all.innerHTML = "<card" */
+    console.log(trip.images[0])
+    all.innerHTML = 
+    `<card class="card">
+        <div class="carousel-inner" id="carousel">
+            <div class="carousel-item active">
+                <img class="img-carousel" src="${trip.images[0].image}" alt="">
+            </div>
+            <div class="carousel-item">
+                <img class="img-carousel" src="${trip.images[1].image}" alt="">
+            </div>
+            <div class="carousel-item">
+                <img class="img-carousel" src="${trip.images[2].image}" alt="">
+            </div>
+            <div class="carousel-item">
+                <img class="img-carousel" src="${trip.images[3].image}" alt="">
+            </div>
+            <div class="carousel-item">
+                <img class="img-carousel" src="${trip.images[4].image}" alt="">
+            </div>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">${trip.city, trip.country}</h5>
+            <p class="card-text">...</p>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+    </card>`
 }
 
 
