@@ -39,7 +39,7 @@
     /* background-color: #00a9d36e; */
     height: 580px;
     position: relative;
-    background-color: #f7fff7;
+    background-color: #ecf9ff;
     
     .form {
         align-content: center;
@@ -56,7 +56,7 @@
 }
 
 #section-trips {
-    background-color: #e6fbff;
+    background-color: white; //#ecffed
     padding: 30px;
 
     &.hidden {
@@ -73,5 +73,10 @@
         display: grid;
         grid-template-columns: repeat(3, 400px);
         grid-row-gap: 40px;
+    }
+
+    section {        
+        margin-left: auto;
+        margin-right: auto;
     }
 }
