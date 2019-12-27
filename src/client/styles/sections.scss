@@ -39,7 +39,7 @@
     /* background-color: #00a9d36e; */
     height: 580px;
     position: relative;
-    background-color: #ecf9ff;
+    background-color: #f7fff7;
     
     .form {
         align-content: center;
@@ -51,12 +51,12 @@
         top: 50%;        
         transform: translate(-50%,-50%);
         border-radius: 40px;
-        box-shadow: $box-shadow;
+        box-shadow: $box-shadow-form;
     }
 }
 
 #section-trips {
-    background-color: #ecffed;
+    background-color: #e6fbff;
     padding: 30px;
 
     &.hidden {
@@ -66,10 +66,12 @@
 
     h2 {
         text-align: center;
+        margin-bottom: 30px;
     }
 
-    .card {
-        width: 400px;
-        height: 800px;
+    #allTrips {
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+        grid-row-gap: 40px;
     }
 }
