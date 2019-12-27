@@ -29,7 +29,6 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
 
-
 app.post('/addTrip', addTrip);
 
 function addTrip(req, res) {
@@ -46,6 +45,13 @@ function addTrip(req, res) {
     })
 
     console.log(allTrips)
+    res.send(allTrips);
+}
+
+app.get('/getTrips', getTrips);
+
+function getTrips(req, res) {
+    
     res.send(allTrips);
 }
 
