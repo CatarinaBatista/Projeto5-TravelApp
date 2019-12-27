@@ -115,7 +115,7 @@ const showTrip = async (trip) => {
         </div>
 
         <div class="card-body">
-            <h5 class="card-title">${trip.city, trip.country}</h5>
+            <h5 class="card-title">${trip.city}, ${trip.country}</h5>
             <p class="card-text">...</p>
             <button class="btn btn-danger">Delete</button>
         </div>
@@ -154,7 +154,7 @@ const showAllTrips = async () => {
                         </div>
 
                         <div class="card-body">
-                            <h5 class="card-title">${trip.city, trip.country}</h5>
+                            <h5 class="card-title">${trip.city}, ${trip.country}</h5>
                             <p class="card-text">...</p>
                             <button class="btn btn-danger">Delete</button>
                         </div>
