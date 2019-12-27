@@ -47,7 +47,7 @@ module.exports = {
             protectWebpackAssets: false
         }),
         new CopyWebpackPlugin([
-            {from:'./src/client/media/images',to:'media/images'} 
+            {from:'./src/client/media/images', to:'media/images'} 
         ]),
         new Dotenv({
             safe: true,
