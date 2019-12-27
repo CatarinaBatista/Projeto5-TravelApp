@@ -51,7 +51,7 @@ const getWeather = async(latitude, longitude) => {
 }
 
 const getImages = async(cityName) => {
-    const url = `${pixabayURL}${process.env.PIXABAY_API_KEY}&q=${cityName}&image_type=photo&category=places&pretty=true`;
+    const url = `${pixabayURL}${process.env.PIXABAY_API_KEY}&q=${cityName}&image_type=photo&category=places&pretty=true&orientation=horizontal`;
 
     const result = await fetch(url);
     try {
