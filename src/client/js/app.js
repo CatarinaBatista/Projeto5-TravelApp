@@ -3,6 +3,8 @@ import moment from 'moment';
 
 let newTrip = {};
 const all = document.getElementById("allTrips");
+let isScrolling = false;
+
 
 /* Show a modal with data of the city*/
 const showCityData = async(event) => {
@@ -52,7 +54,7 @@ const fillModalInfo = async(city) => {
     }
 
     // Trip
-    newTrip = {        
+    newTrip = {
         city: city.cityName,
         country: city.country,
         latitude: city.latitude,
@@ -91,6 +93,7 @@ const addTrip = async (event) => {
 
 const showTrip = async (trip) => {
     document.getElementById("section-trips").classList.remove("hidden");
+    document.getElementById("li-trips").style.display = "block";
     
     const card = document.createElement("section");
 
@@ -162,8 +165,9 @@ const showAllTrips = async () => {
                     
                     all.appendChild(card);
                 }    
-                            
-                document.getElementById("section-trips").classList.remove("hidden");                
+
+                document.getElementById("section-trips").classList.remove("hidden");
+                document.getElementById("li-trips").style.display = "block";
             }
         }
         catch (error) {
@@ -172,8 +176,24 @@ const showAllTrips = async () => {
         }
 }
 
+/* --- Show navBar and hide it after 1.5s --- */
+/* function showNavBar() {
+    if (!isScrolling) {
+        isScrolling = true;
+        document.getElementById('nav').classList.remove("hide");
+    
+        setTimeout(function() {
+            isScrolling = false;
+            document.getElementById('nav').classList.add("hide");
+        }, 1500);
+    }
+}; */
+
+
 
 /* --- Event Listeners --- */
+
+/* document.addEventListener("scroll", showNavBar); */
 
 /* When app starts */
 showAllTrips();
