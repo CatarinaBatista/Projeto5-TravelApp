@@ -8,5 +8,8 @@
 ## About
 
 ## APIs used
+[Geonames](http://www.geonames.org/)
+[Dark Sky](https://darksky.net/dev)
+[Pixabay](https://pixabay.com/)
 
 ## Get Started
