@@ -1,10 +1,10 @@
 // Connect dependencies and libraries
-var path = require('path')
-const cors = require('cors');
-const express = require('express');
-const bodyParser = require('body-parser');
+var path = require("path")
+const cors = require("cors");
+const express = require("express");
+const bodyParser = require("body-parser");
 
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
 
 //Variables
@@ -21,15 +21,15 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Initialize the main project folder
-app.use(express.static('dist'))
+app.use(express.static("dist"))
 
 
 // Initialize routes
-app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
+app.get("/", function (req, res) {
+    res.sendFile("dist/index.html")
 })
 
-app.post('/addTrip', addTrip);
+app.post("/addTrip", addTrip);
 
 function addTrip(req, res) {
     
@@ -39,16 +39,16 @@ function addTrip(req, res) {
         latitude: req.body.trip.latitude,
         longitude: req.body.trip.longitude,
         startDate: req.body.trip.startDate,
-        startDate: req.body.trip.startDate,
+        endDate: req.body.trip.endDate,
         images: req.body.trip.images,
-        //forecast: 
+        forecast:  req.body.trip.forecast
     })
 
     console.log(allTrips)
     res.send(allTrips);
 }
 
-app.get('/getTrips', getTrips);
+app.get("/getTrips", getTrips);
 
 function getTrips(req, res) {
     
