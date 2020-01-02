@@ -9,16 +9,23 @@
 
     .img-card {            
         width: 99.9%;
-        max-height: 200px;
+        height: 200px;
         border-radius: 10px;
     }
 
     .card-body {
         display: grid;
-        grid-template-rows: 40px auto 40px;
+        grid-template-rows: 40px 300px 40px;
 
-        .card-text {
-            padding-left: 15px;
+        i {
+            margin-right: 15px;
+            color: #00aa77;
+            font-size: 16px;
+        }
+
+        p {
+            margin: 0;
+            padding-left: 35px;
         }
     }
 }
