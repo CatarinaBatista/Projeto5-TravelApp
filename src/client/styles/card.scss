@@ -2,7 +2,7 @@
 
 .card {
     width: 320px;
-    height: 430px;
+    height: auto;
     border: 1px solid black;
     border-radius: 10px;    
     box-shadow: $box-shadow-card;
@@ -14,10 +14,11 @@
     }
 
     .card-body {
+        display: grid;
+        grid-template-rows: 40px auto 40px;
 
-        /* button {            
-            display: flex;
-            justify-content: flex-end;
-        } */
+        .card-text {
+            padding-left: 15px;
+        }
     }
 }
