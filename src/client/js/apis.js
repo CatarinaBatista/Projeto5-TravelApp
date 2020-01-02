@@ -30,19 +30,23 @@ const getCityData = async(event) => {
     }
 }
 
-const getWeather = async(latitude, longitude) => {
-    const url = `${darkSkyUrl}${process.env.DARK_SKY_API_KEY}/${latitude},${longitude}`; /* ,${time} */
+const getWeather = async(latitude, longitude, startDate) => {
+    const seconds = new Date(startDate) / 1000;
+    const url = `https://cors-anywhere.herokuapp.com/${darkSkyUrl}${process.env.DARK_SKY_API_KEY}/${latitude},${longitude},${seconds}?exclude=minutely,hourly,daily,flags`;
 
     const result = await fetch(url);
     try {
         const data = await result.json();
 
-        const wheather = {
-
+        const forecast = {
+            summary: data.currently.summary,
+            icon: data.currently.icon,
+            temperature: data.currently.temperature,
+            apparentTemp: data.currently.apparentTemperature,
         }
 
-        console.log(data)
-        return data;
+        console.log(forecast)
+        return forecast;
     }
     catch(error) {
         console.log("error", error);
