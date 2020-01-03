@@ -35,6 +35,7 @@ app.post("/addTrip", addTrip);
 function addTrip(req, res) {
     
     allTrips.push({
+        id: req.body.trip.id,
         city: req.body.trip.city,
         country: req.body.trip.country,
         latitude: req.body.trip.latitude,
