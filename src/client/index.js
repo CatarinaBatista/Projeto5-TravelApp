@@ -1,6 +1,4 @@
-
-import "./js/app.js";
-
+import "./js/listeners.js";
 import "./styles/allStyles.scss";
 
 
