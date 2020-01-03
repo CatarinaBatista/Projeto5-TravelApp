@@ -42,7 +42,7 @@ const getWeather = async(latitude, longitude, startDate) => {
             summary: data.currently.summary,
             icon: data.currently.icon,
             temperature: data.currently.temperature,
-            apparentTemp: data.currently.apparentTemperature,
+            //apparentTemp: data.currently.apparentTemperature,
         }
 
         console.log(forecast)
