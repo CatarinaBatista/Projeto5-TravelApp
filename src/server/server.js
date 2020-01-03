@@ -2,6 +2,7 @@
 var path = require("path")
 const cors = require("cors");
 const express = require("express");
+const request = require('supertest');
 const bodyParser = require("body-parser");
 
 const dotenv = require("dotenv");
@@ -50,8 +51,7 @@ function addTrip(req, res) {
 
 app.get("/getTrips", getTrips);
 
-function getTrips(req, res) {
-    
+function getTrips(req, res) {    
     res.send(allTrips);
 }
 
@@ -64,3 +64,10 @@ app.listen(port, listening);
 function listening(){
     console.log(`Running on localhost: ${port}`);
 };
+
+// Express server test
+request(app)
+  .get('/addTrip')
+  .expect('Content-Type', /json/)
+  .expect('Content-Length', '20')
+  .expect(200);
