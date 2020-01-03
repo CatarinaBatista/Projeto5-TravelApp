@@ -3,14 +3,14 @@
 #section-about{
     
     .intro {
-        height: 430px;
+        height: 450px;
         font-size: 18px;
         text-align: center;
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 100px;
+        padding: 80px 100px 0 100px;
 
         h1 {
             margin-top: 0;
@@ -36,16 +36,15 @@
 }
 
 #section-plan {
-    /* background-color: #00a9d36e; */
     height: 580px;
     position: relative;
-    background-color: #ecf9ff;
+    background-color: #ecffed; //#ecffed
     
     .form {
         align-content: center;
         height: 380px;
         width: 80%;
-        background-color: white/* #00a9d36e */;
+        background-color: white;
         position: absolute;
         left: 50%;
         top: 50%;        
@@ -56,7 +55,7 @@
 }
 
 #section-trips {
-    background-color: white; //#ecffed
+    background-color: white;
     padding: 30px;
 
     &.hidden {
