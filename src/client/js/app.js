@@ -106,7 +106,7 @@ const showTrip = async (trip) => {
 
 /* Show all trips when reload the page in all trips section */
 const showAllTrips = async () => {
-    nav.classList.add("test");
+    nav.classList.add("top");
 
     const trips = await fetch("http://localhost:8000/getTrips")
         .then(Response => Response.json());
@@ -133,21 +133,23 @@ const addCard = async (trip) => {
 
     card.innerHTML = 
         `<card class="card">
-            <div class="carousel-inner" id="carousel">
-                <div class="carousel-item active">
-                    <img class="img-card" src="${trip.images[0].image}" alt="">
-                </div>
-                <div class="carousel-item">
-                    <img class="img-card" src="${trip.images[1].image}" alt="">
-                </div>
-                <div class="carousel-item">
-                    <img class="img-card" src="${trip.images[2].image}" alt="">
-                </div>
-                <div class="carousel-item">
-                    <img class="img-card" src="${trip.images[3].image}" alt="">
-                </div>
-                <div class="carousel-item">
-                    <img class="img-card" src="${trip.images[4].image}" alt="">
+            <div class="carousel slide" data-ride="carousel">
+                <div id="cardImg" class="carousel-inner" id="carousel2">
+                    <div class="carousel-item active">
+                        <img class="img-card" src="${trip.images[0].image}" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-card" src="${trip.images[1].image}" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-card" src="${trip.images[2].image}" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-card" src="${trip.images[3].image}" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-card" src="${trip.images[4].image}" alt="">
+                    </div>
                 </div>
             </div>
 
@@ -213,10 +215,10 @@ const forecastIcon = async(icon) => {
 /* --- Show or hide navBar it after 1s --- */
 const showNavBar = async() => {
     if (window.pageYOffset === 0) {
-        nav.classList.add("test");
+        nav.classList.add("top");
     }
     else {
-        nav.classList.remove("test");
+        nav.classList.remove("top");
         if (!isScrolling) {
             isScrolling = true;
             nav.classList.remove("hide");
@@ -233,21 +235,4 @@ const printTrip = async (event) => {
     window.print();
 }
 
-
-
-/* --- Event Listeners --- */
-
-document.addEventListener("scroll", showNavBar);
-
-/* When app starts */
-showAllTrips();
-
-/* Show modal with city info after submit form */
-document.getElementById("submitForm").addEventListener("click", (event) => showCityData(event));
-
-/* Add trip after save it */
-document.getElementById("addTrip").addEventListener("click", (event) => addTrip(event));
-
-
-document.getElementById("print").addEventListener("click", (event) => printTrip(event));
-/* document.getElementById("delete").addEventListener("click", (event) => addTrip(event)); */
+export { showNavBar, showAllTrips, showCityData, addTrip, printTrip };
