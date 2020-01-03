@@ -5,10 +5,9 @@ let newTrip = {};
 const all = document.getElementById("allTrips");
 let isScrolling = false;
 const nav = document.getElementById('nav');
-let tripID = 0;
 
 
-/* Show a modal with data of the city*/
+/* --- Show a modal with data of the city --- */
 const showCityData = async(event) => {
     const form = document.getElementById("form");
 
@@ -24,7 +23,7 @@ const showCityData = async(event) => {
 }
 
 
-/* Fill Modal with Trip Info */
+/* --- Fill Modal with Trip Info --- */
 const fillModalInfo = async(city) => {
     const title = document.getElementById("modalTitle");
     const startDate = document.getElementById("depart-date").value.toString();
@@ -57,8 +56,11 @@ const fillModalInfo = async(city) => {
         img.alt = url.cityName
     }
 
+    const generateID = '_' + Math.random().toString(36).substr(2, 9);
+
     // Trip
     newTrip = {
+        id: generateID,
         city: city.cityName,
         country: city.country,
         latitude: city.latitude,
@@ -70,7 +72,7 @@ const fillModalInfo = async(city) => {
     }
 }
 
-/* Add trip */
+/* --- Add trip --- */
 const addTrip = async (event) => {
     event.preventDefault();
     
@@ -96,7 +98,7 @@ const addTrip = async (event) => {
 
 }
 
-/* Show the new trip in all trips section */
+/* --- Show the new trip in all trips section --- */
 const showTrip = async (trip) => {
     document.getElementById("section-trips").classList.remove("hidden");
     document.getElementById("li-trips").style.display = "block";
@@ -104,7 +106,7 @@ const showTrip = async (trip) => {
     await addCard(trip);
 }
 
-/* Show all trips when reload the page in all trips section */
+/* --- Show all trips when reload the page in all trips section --- */
 const showAllTrips = async () => {
     nav.classList.add("top");
 
@@ -173,7 +175,7 @@ const addCard = async (trip) => {
         
 }
 
-/* Select the icon according to forecast */
+/* --- Select the icon according to forecast --- */
 const forecastIcon = async(icon) => {
     let iconClass = "";
 
@@ -231,6 +233,7 @@ const showNavBar = async() => {
     } 
 };
 
+/* --- Option to print --- */
 const printTrip = async (event) => {
     window.print();
 }
