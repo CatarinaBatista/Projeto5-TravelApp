@@ -65,9 +65,10 @@ function listening(){
     console.log(`Running on localhost: ${port}`);
 };
 
+
 // Express server test
-request(app)
-  .get('/addTrip')
-  .expect('Content-Type', /json/)
-  .expect('Content-Length', '20')
-  .expect(200);
+app.get('/test', (req, res) => {
+    res.status(200).send('Hello World!')
+})
+
+module.exports = app
