@@ -1,10 +1,11 @@
-import { showNavBar, showAllTrips, showCityData, addTrip, printTrip } from './app';
+import { showNavBar, showAllTrips, showCityData, addTrip, printTrip, restrictDates } from './app';
 
 /* Show or hide navbar */
 document.addEventListener("scroll", showNavBar);
 
 /* When app starts */
 showAllTrips();
+restrictDates();
 
 /* Show modal with city info after submit form */
 document.getElementById("submitForm").addEventListener("click", (event) => showCityData(event));
