@@ -1,36 +1,75 @@
-#section-modal {
-    width: 1000px;
-
-    .modal-body {
-        display: grid;
-        grid-template-columns: 300px auto;
-        grid-template-areas: "img info";
-    }
+@media(max-width: 900px) {
+    #section-modal {
+        width: 1000px;
     
-    #cityImg {
-        grid-area: "img";
-        height: auto;
-        width: 250px;
-        margin: 0 20px;
-        border-radius: 30px;
+        .modal-body {
+            display: grid;
+            grid-template-rows: 250px auto;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #cityImg {
+            height: auto;
+            width: 250px;
+            margin: 0 20px;
+            border-radius: 30px;
+        }
+    
+        .img-carousel{
+            height: auto;
+            width: 250px;    
+        }
+    
+        .tripInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+    
+        i {
+            color: #00aa77;            
+            font-size: 18px;
+            margin-right: 10px;
+        }
     }
+}
 
-    .img-carousel{
-        height: auto;
-        width: 250px;
-
-    }
-
-    .tripInfo {
-        grid-area: "info";
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
-
-    i {
-        color: #00aa77;            
-        font-size: 18px;
-        margin-right: 10px;
+@media(min-width: 901px) {
+    #section-modal {
+        width: 1000px;
+    
+        .modal-body {
+            display: grid;
+            grid-template-columns: 300px auto;
+            grid-template-areas: "img info";
+        }
+        
+        #cityImg {
+            grid-area: "img";
+            height: auto;
+            width: 250px;
+            margin: 0 20px;
+            border-radius: 30px;
+        }
+    
+        .img-carousel{
+            height: auto;
+            width: 250px;
+    
+        }
+    
+        .tripInfo {
+            grid-area: "info";
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+    
+        i {
+            color: #00aa77;            
+            font-size: 18px;
+            margin-right: 10px;
+        }
     }
 }
