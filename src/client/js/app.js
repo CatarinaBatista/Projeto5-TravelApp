@@ -238,4 +238,13 @@ const printTrip = async (event) => {
     window.print();
 }
 
-export { showNavBar, showAllTrips, showCityData, addTrip, printTrip };
+/* --- Disallow select dates before today --- */
+const restrictDates = async() => {
+    let today = new Date();
+    today =  today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0');
+
+    document.getElementById("return-date").min = today.toString();
+    document.getElementById("depart-date").min = today.toString();
+}
+
+export { showNavBar, showAllTrips, showCityData, addTrip, printTrip, restrictDates };
