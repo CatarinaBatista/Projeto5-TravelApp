@@ -3,6 +3,7 @@
 ## Table of Contents
 
 * [About](#about)
+* [Pre-requisites](#pre-requisites)
 * [APIs used](#apis-used)
 * [Get Started](#get-started)
 * [What I used](#what-i-used)
@@ -12,10 +13,13 @@
 
 This project was built with the goal of completing the course of front-end developer of udacity.
 
-It is a web site where user put info about their trip (locations and dates) and they could see more info about it, like some images of the city, the forecast of the first day, the country... 
+It is a website that allows the user to add future trips. The user enter info about their trip (locations and dates) and they could see more info about it, like some images of the city, the forecast of the first day, the country... 
 
 The user can save the trip in a list and delete it from the list.
 
+
+## Pre-requisites
+* You must have [Node.js](https://nodejs.org/en/) installed
 
 
 ## APIs used
