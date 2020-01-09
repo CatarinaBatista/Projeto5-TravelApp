@@ -11,15 +11,17 @@
 ## About
 
 This project was built with the goal of completing the course of front-end developer of udacity.
+
 It is a web site where user put info about their trip (locations and dates) and they could see more info about it, like some images of the city, the forecast of the first day, the country... 
-The user can save the trip in a list and delete it from the list
+
+The user can save the trip in a list and delete it from the list.
 
 
 ## APIs used
 
-[Geonames](http://www.geonames.org/) -> To get data of the city
-[Dark Sky](https://darksky.net/dev) -> To get the weather forecast
-[Pixabay](https://pixabay.com/) -> To get images
+[Geonames](http://www.geonames.org/) -> To get data of the city.
+[Dark Sky](https://darksky.net/dev) -> To get the weather forecast.
+[Pixabay](https://pixabay.com/) -> To get images.
 
 
 ## Get Started
