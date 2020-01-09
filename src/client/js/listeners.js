@@ -13,6 +13,5 @@ document.getElementById("submitForm").addEventListener("click", (event) => showC
 /* Add trip after save it */
 document.getElementById("addTrip").addEventListener("click", (event) => addTrip(event));
 
-
+/* Print the page */
 document.getElementById("print").addEventListener("click", (event) => printTrip(event));
-/* document.getElementById("delete").addEventListener("click", (event) => addTrip(event)); */
