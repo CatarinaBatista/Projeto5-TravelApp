@@ -17,11 +17,15 @@ It is a web site where user put info about their trip (locations and dates) and 
 The user can save the trip in a list and delete it from the list.
 
 
+
 ## APIs used
 
-[Geonames](http://www.geonames.org/) -> To get data of the city.
-[Dark Sky](https://darksky.net/dev) -> To get the weather forecast.
-[Pixabay](https://pixabay.com/) -> To get images.
+[Geonames](http://www.geonames.org/) => To get data of the city
+
+[Dark Sky](https://darksky.net/dev) => To get the weather forecast
+
+[Pixabay](https://pixabay.com/) => To get images
+
 
 
 ## Get Started
@@ -39,6 +43,7 @@ The user can save the trip in a list and delete it from the list.
     * Run `npm run dev` in the terminal
 7. Use `npm run test` for test the project with jest
     * Run it when the server was not running
+
 
 
 ## What I used
