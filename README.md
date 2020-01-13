@@ -39,11 +39,11 @@ The user can save the trip in a list and delete it from the list.
     * put `npm install` on the terminal
 3. Add dist folder
     * `npm run prod` on the terminal
-4. For use all APIs (Geonames, dark Sky and pixabay) you must signing up to get an API key
+4. For use all APIs (Geonames, Dark Sky and Pixabay) you must signing up to get an API key
     * Create a `.env` file that contain your `GEONAMES_API_KEY`, `DARK_SKY_API_KEY` and `PIXABAY_API_KEY`
 5. For start the server you should run that command in the terminal: `npm start`
     * The server should start on http://localhost:8000/ on your browser
-6. You can run the server in developer mode.
+6. You can run the application in developer mode.
     * Run `npm run dev` in the terminal
 7. Use `npm run test` for test the project with jest
     * Run it when the server was not running
