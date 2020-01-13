@@ -1,4 +1,4 @@
-import { showNavBar, showAllTrips, showCityData, addTrip, printTrip, restrictDates } from './app';
+import { showNavBar, showAllTrips, showCityData, addTrip, printTrip, restrictDates, deleteTrip } from './app';
 
 /* Show or hide navbar */
 document.addEventListener("scroll", showNavBar);
@@ -15,3 +15,6 @@ document.getElementById("addTrip").addEventListener("click", (event) => addTrip(
 
 /* Print the page */
 document.getElementById("print").addEventListener("click", (event) => printTrip(event));
+
+/* Delete Trip */
+document.getElementById("allTrips").addEventListener('click', (event) => deleteTrip(event));
