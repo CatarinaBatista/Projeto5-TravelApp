@@ -125,19 +125,28 @@
 
     
     #allTrips {
-        @media(min-width: 1281px) {
+        @media(min-width: 1441px) {
             display: grid;
-            grid-template-columns: repeat(4, 450px);
+            grid-template-columns: repeat(4, auto);
             grid-row-gap: 40px;
+            grid-column-gap: 20px;
         }
             
-        @media(min-width: 901px) and (max-width:1280px) {
+        @media(min-width: 1131px) and (max-width: 1440px) {
             display: grid;
-            grid-template-columns: repeat(3, 400px);
+            grid-template-columns: repeat(3, auto);
             grid-row-gap: 40px;
+            grid-column-gap: 20px;
+        }
+
+        @media(min-width: 801px) and (max-width: 1130px) {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-row-gap: 40px;
+            grid-column-gap: 20px;
         }
         
-        @media(max-width: 900px) {
+        @media(max-width: 800px) {
             display: grid;
             grid-template-columns: auto;
             grid-row-gap: 40px;
