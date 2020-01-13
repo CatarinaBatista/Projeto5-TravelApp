@@ -6,7 +6,7 @@ const pixabayURL = 'https://pixabay.com/api/?key=';
 const destination = document.getElementById('destination');
 
 
-/* Function to GET City data from GeoName API */
+/* Function to get City data from GeoName API */
 const getCityData = async(event) => {
     event.preventDefault();
     const url = `${geoNamesUrl}${destination.value}&maxRows=3&username=${process.env.GEONAMES_API_KEY}`;
@@ -30,6 +30,7 @@ const getCityData = async(event) => {
     }
 }
 
+/* Function to get weather forecast for the 1st day from Dark Sky API */
 const getWeather = async(latitude, longitude, startDate) => {
     const seconds = new Date(startDate) / 1000;
     const url = `https://cors-anywhere.herokuapp.com/${darkSkyUrl}${process.env.DARK_SKY_API_KEY}/${latitude},${longitude},${seconds}?exclude=minutely,hourly,daily,flags`;
@@ -54,6 +55,7 @@ const getWeather = async(latitude, longitude, startDate) => {
     }
 }
 
+/* Function to get 5 images of the city from Pixabay API */
 const getImages = async(cityName) => {
     const url = `${pixabayURL}${process.env.PIXABAY_API_KEY}&q=${cityName}&image_type=photo&category=places&pretty=true&orientation=horizontal`;
 
@@ -85,7 +87,6 @@ const getImages = async(cityName) => {
         alert(error);
     }
 }
-
 
 
 export {getCityData, getWeather, getImages}
