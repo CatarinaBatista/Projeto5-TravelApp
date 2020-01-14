@@ -30,6 +30,7 @@ app.get("/", function (req, res) {
     res.sendFile("dist/index.html")
 })
 
+//add new trip in allTrips array
 app.post("/addTrip", addTrip);
 
 function addTrip(req, res) {
@@ -46,13 +47,27 @@ function addTrip(req, res) {
         forecast:  req.body.trip.forecast
     })
 
-    console.log(allTrips)
     res.send(allTrips);
 }
 
+
+// Delete selected trip
+app.post("/deleteTrip", deleteTrip);
+
+function deleteTrip(req, res) {
+    
+    allTrips.forEach((trip, index) => {
+        if (trip.id == req.body.id) {
+            allTrips.splice(index, 1);
+        }
+    });
+}
+
+
+//get all trips
 app.get("/getTrips", getTrips);
 
-function getTrips(req, res) {    
+function getTrips(req, res) {
     res.send(allTrips);
 }
 
