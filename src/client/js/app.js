@@ -20,7 +20,7 @@ const showNavBar = async() => {
                 nav.classList.add("hide");
             }, 1000);
         }
-    } 
+    }
 };
 
 
@@ -121,7 +121,7 @@ const addCard = async (trip) => {
             </div>
         </card>`;
         
-    all.appendChild(card);        
+    all.appendChild(card);
 }
 
 

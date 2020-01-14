@@ -11,7 +11,7 @@
         justify-content: center;
         align-items: center;
 
-        @media(max-width: 900px) {            
+        @media(max-width: 900px) {
             height: 560px;
             padding: 100px 90px 0 90px;
         }
@@ -38,7 +38,7 @@
             display: inline-block;
         }
     }
-    
+
     .image-header {
         position: absolute;
         z-index: -1;
@@ -58,7 +58,7 @@
             height: 27rem;
             top: 80px;
         }
-        
+
         @media(min-width: 1281px) {
             height: 450px;
             padding: 80px 100px 0 100px;
@@ -71,7 +71,7 @@
 #section-plan {
     position: relative;
     background-color: #ecf9ff; //#ecffed
-    
+
     @media(max-width: 900px) {
         height: 830px;
     }
@@ -79,11 +79,11 @@
     @media(min-width: 901px) and (max-width:1280px) {
         height: 580px;
     }
-    
+
     @media(min-width: 1281px) {
         height: 580px;
     }
-    
+
     .form {
         width: 80%;
         align-content: center;
@@ -98,11 +98,11 @@
         @media(max-width: 900px) {
             height: 80%;
         }
-    
+
         @media(min-width: 901px) and (max-width:1280px) {
             height: 380px;
         }
-        
+
         @media(min-width: 1281px) {
             height: 380px;
         }
@@ -125,7 +125,6 @@
         font-size: 38px;
     }
 
-    
     #allTrips {
         @media(min-width: 1441px) {
             display: grid;
@@ -133,7 +132,7 @@
             grid-row-gap: 40px;
             grid-column-gap: 20px;
         }
-            
+
         @media(min-width: 1131px) and (max-width: 1440px) {
             display: grid;
             grid-template-columns: repeat(3, auto);
@@ -147,7 +146,7 @@
             grid-row-gap: 40px;
             grid-column-gap: 20px;
         }
-        
+
         @media(max-width: 800px) {
             display: grid;
             grid-template-columns: auto;

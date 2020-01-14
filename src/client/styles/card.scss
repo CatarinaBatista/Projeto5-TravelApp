@@ -4,14 +4,14 @@
     width: 320px;
     height: auto;
     border: 1px solid black;
-    border-radius: 10px;    
+    border-radius: 10px;
     box-shadow: $box-shadow-card;
 
     &:hover {
         box-shadow: 5px 5px 8px rgba(175, 175, 175, 0.77);
     }
 
-    .img-card {            
+    .img-card {
         width: 99.9%;
         height: 200px;
         border-radius: 10px;
