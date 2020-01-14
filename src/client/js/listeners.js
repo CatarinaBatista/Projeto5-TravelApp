@@ -1,4 +1,5 @@
-import { showNavBar, showAllTrips, showCityData, addTrip, printTrip, restrictDates, deleteTrip } from './app';
+import { showAllTrips, showCityData, deleteTrip, addTrip } from './handleTrips';
+import { printTrip, restrictDates, showNavBar } from './app';
 
 /* Show or hide navbar */
 document.addEventListener("scroll", showNavBar);
