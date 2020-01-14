@@ -133,7 +133,7 @@ const deleteTrip = async(event) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id: tripId })
         })
-        .then(location.reload(true)) // TEM A CERTEZA DE QUE...
+        .then(location.reload(true)) 
         .catch(error => console.log(error));
     }
 }
