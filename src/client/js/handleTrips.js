@@ -126,15 +126,19 @@ const showAllTrips = async () => {
 /* Verify if button to delete was clicked and delete the selected trip */
 const deleteTrip = async(event) => {
     if (event.target.tagName === "BUTTON") {
-        const tripId = (event.target).getAttribute("data-id");
-        
-        await fetch("http://localhost:8000/deleteTrip", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ id: tripId })
-        })
-        .then(location.reload(true)) 
-        .catch(error => console.log(error));
+        var result = confirm("Want to delete?");
+
+        if (result) {
+            const tripId = (event.target).getAttribute("data-id");
+            
+            await fetch("http://localhost:8000/deleteTrip", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id: tripId })
+            })
+            .then(location.reload(true)) 
+            .catch(error => console.log(error));
+        }
     }
 }
 
