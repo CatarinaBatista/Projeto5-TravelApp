@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 dotenv.config();
 
+
 //Variables
 let allTrips = [];
 
@@ -26,8 +27,8 @@ app.use(express.static("dist"))
 
 
 // Initialize routes
-app.get("/", function (req, res) {
-    res.sendFile("dist/index.html")
+app.get("/", function (req, res) { 
+    path.join(__dirname, '/dist/index.html');
 })
 
 //add new trip in allTrips array
